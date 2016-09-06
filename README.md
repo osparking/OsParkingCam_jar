@@ -10,3 +10,5 @@ Please follow the steps explained in the accompanying Install_steps.html for mor
 (How to run steps are redirected from the html file)
 
 Enjoy your parking experience at OsParkingCam (Os is pronounced as in The Wizard of 'Oz').
+
+To download, install, and run OsParking, refer to "Install_Guide.odt or pdf" files.
