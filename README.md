@@ -1,4 +1,4 @@
-#OsParkingCam_jars(2.0.1)
+#OsParkingCam_jars(2.1.0)
 
 OsParkingCam Package jar files- needs latest Parkinglog-db(another repository of OsParking)
 
@@ -10,3 +10,5 @@ Please follow the steps explained in the accompanying Install_steps.html for mor
 (How to run steps are redirected from the html file)
 
 Enjoy your parking experience at OsParkingCam (Os is pronounced as in The Wizard of 'Oz').
+
+To download, install, and run OsParking, refer to ![Install_Guide.pdf](https://github.com/osparking/OsParking_jar/blob/master/Install_Guide.pdf). If you happen to want to modify the installation guide, please download ![Install_Guide.odt](https://github.com/osparking/OsParking_jar/blob/master/Install_Guide.odt), modify and make a pull request.
