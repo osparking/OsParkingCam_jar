@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.30, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.6.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: parkinglot
 -- ------------------------------------------------------
--- Server version	5.6.30
+-- Server version	5.6.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -98,7 +98,7 @@ CREATE TABLE `car_arrival` (
   KEY `valid_enteredAs_tag` (`TagEnteredAs`),
   KEY `true_attendant` (`AttendantID`),
   CONSTRAINT `once_attendant` FOREIGN KEY (`AttendantID`) REFERENCES `users_osp` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2248 DEFAULT CHARSET=utf8 COMMENT='records vehicle arrival at a gate ';
+) ENGINE=InnoDB AUTO_INCREMENT=2251 DEFAULT CHARSET=utf8 COMMENT='records vehicle arrival at a gate ';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ CREATE TABLE `cardriver` (
   KEY `idx_on_affiliation` (`L2_NO`),
   CONSTRAINT `EXISTING_L2_AFFILI_KEY` FOREIGN KEY (`L2_NO`) REFERENCES `l2_affiliation` (`L2_NO`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `EXISTING_UNIT_KEY` FOREIGN KEY (`UNIT_SEQ_NO`) REFERENCES `building_unit` (`SEQ_NO`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2022 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3022 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +243,7 @@ CREATE TABLE `gatedevices` (
 
 LOCK TABLES `gatedevices` WRITE;
 /*!40000 ALTER TABLE `gatedevices` DISABLE KEYS */;
-INSERT INTO `gatedevices` VALUES (1,'남1문','127.0.0.1','8081',0,'127.0.0.1','55',0,1,'1','127.0.0.1','8082',0,1,'4',2,58,29.8,10,'2016-08-25 00:11:59'),(2,'강변후문','127.0.0.1','8083',0,'127.0.0.1','8084',0,1,'2','127.0.0.1','8085',0,1,'3',0,0,29.11,100,'2016-08-12 17:53:10'),(3,'(anonymous)','127.0.0.1','8080',0,'127.0.0.1','8080',0,1,'2','127.0.0.1','8080',0,1,'2',0,0,0,NULL,NULL),(4,'(anonymous)','127.0.0.1','8080',0,'127.0.0.1','8080',0,0,'','127.0.0.1','8080',0,0,'',0,0,0,NULL,NULL);
+INSERT INTO `gatedevices` VALUES (1,'남1문','127.0.0.1','6121',2,'127.0.0.1','6161',0,0,'1','127.0.0.1','8082',0,0,'1',3,136,29.8,10,'2016-08-25 00:11:59'),(2,'강변후문','127.0.0.1','8083',0,'127.0.0.1','8084',0,0,'1','127.0.0.1','8085',0,0,'1',0,0,29.11,100,'2016-08-12 17:53:10'),(3,'(anonymous)','127.0.0.1','8080',0,'127.0.0.1','8080',0,1,'2','127.0.0.1','8080',0,1,'2',0,0,0,NULL,NULL),(4,'(anonymous)','127.0.0.1','8080',0,'127.0.0.1','8080',0,0,'','127.0.0.1','8080',0,0,'',0,0,0,NULL,NULL);
 /*!40000 ALTER TABLE `gatedevices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,7 +314,7 @@ CREATE TABLE `loginrecord` (
   PRIMARY KEY (`recNO`),
   KEY `realAttendant` (`userID`),
   CONSTRAINT `once_attendant2` FOREIGN KEY (`userID`) REFERENCES `users_osp` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=238 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -323,6 +323,7 @@ CREATE TABLE `loginrecord` (
 
 LOCK TABLES `loginrecord` WRITE;
 /*!40000 ALTER TABLE `loginrecord` DISABLE KEYS */;
+INSERT INTO `loginrecord` VALUES (244,'admin',NULL,'2016-09-21 13:58:19');
 /*!40000 ALTER TABLE `loginrecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -360,7 +361,7 @@ CREATE TABLE `settingstable` (
 
 LOCK TABLES `settingstable` WRITE;
 /*!40000 ALTER TABLE `settingstable` DISABLE KEYS */;
-INSERT INTO `settingstable` VALUES ('(주)오픈주차장','',1,1,'ko','KR',110,1,300,2,1280,960,2,3271307,120,8000,1000);
+INSERT INTO `settingstable` VALUES ('(주)오픈주차장','',0,1,'ko','KR',1,1,300,1,1280,960,2,3271307,120,8000,1280);
 /*!40000 ALTER TABLE `settingstable` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,7 +377,7 @@ CREATE TABLE `systemrun` (
   `stopTm` timestamp NULL DEFAULT NULL,
   `startTm` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`recNo`)
-) ENGINE=InnoDB AUTO_INCREMENT=896 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=903 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -385,6 +386,7 @@ CREATE TABLE `systemrun` (
 
 LOCK TABLES `systemrun` WRITE;
 /*!40000 ALTER TABLE `systemrun` DISABLE KEYS */;
+INSERT INTO `systemrun` VALUES (902,'2016-09-21 13:58:21',NULL);
 /*!40000 ALTER TABLE `systemrun` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -416,7 +418,7 @@ CREATE TABLE `users_osp` (
 
 LOCK TABLES `users_osp` WRITE;
 /*!40000 ALTER TABLE `users_osp` DISABLE KEYS */;
-INSERT INTO `users_osp` VALUES ('admin','총괄자','81dc9bdb52d04dc20036dbd8313ed055','admin@osparking.com',1,'','02-858-9168','2016-08-11 11:53:14','2016-08-14 16:24:59'),('guest','김손님','81dc9bdb52d04dc20036dbd8313ed055',NULL,0,NULL,'02-858-9168','2016-08-25 08:23:25',NULL),('manager','운영자','81dc9bdb52d04dc20036dbd8313ed055',NULL,1,NULL,'02-858-9168','2016-08-25 08:23:25',NULL);
+INSERT INTO `users_osp` VALUES ('admin','총괄자','81dc9bdb52d04dc20036dbd8313ed055','admin@osparking.com',1,'','02-858-9168','2016-08-11 11:53:14','2016-08-14 16:24:59');
 /*!40000 ALTER TABLE `users_osp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -461,4 +463,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25  9:26:56
+-- Dump completed on 2016-09-21 23:00:14
